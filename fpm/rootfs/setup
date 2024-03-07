@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+set -e
+set -x
+
+shopware_version=$(jq '.packages[] | select (.name == "shopware/core") | .version' -r < composer.lock)
+# if shopware version starts with 6.6 echo 6.6
+# shellcheck disable=SC2081,SC3010
+if [[ $shopware_version == v6.6.* ]]; then
+  # shellcheck source-path=./fpm/rootfs source=./usr/local/shopware/setup_6.6.x
+  . /usr/local/shopware/setup_6.6.x
+else
+  # shellcheck source-path=./fpm/rootfs source=./usr/local/shopware/setup_6.5.x
+  . /usr/local/shopware/setup_6.5.x
+fi
