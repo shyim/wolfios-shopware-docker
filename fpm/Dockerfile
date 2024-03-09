@@ -4,6 +4,7 @@ ARG PHP_VERSION=8.3
 
 RUN apk add --no-cache \
     jq \
+    trurl \
     php-${PHP_VERSION} \
     php-${PHP_VERSION}-fpm \
     php-${PHP_VERSION}-bz2 \
