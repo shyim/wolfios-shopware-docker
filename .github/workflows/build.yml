@@ -33,6 +33,7 @@ jobs:
             context: fpm
             platforms: linux/amd64,linux/arm64
             push: true
+            sbom: true
             tags: ghcr.io/${{ github.repository }}:${{ matrix.php }}-fpm
 
       - name: Build and push (caddy)
@@ -41,6 +42,7 @@ jobs:
             context: caddy
             platforms: linux/amd64,linux/arm64
             push: true
+            sbom: true
             tags: |
                 ghcr.io/${{ github.repository }}:${{ matrix.php }}
                 ghcr.io/${{ github.repository }}:${{ matrix.php }}-caddy
