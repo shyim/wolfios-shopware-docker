@@ -6,7 +6,7 @@ FROM ghcr.io/shyim/wolfios-shopware-docker:${PHP_VERSION}-fpm
 
 USER root
 
-RUN apk add --no-cache caddy
+RUN apk add --no-cache caddy curl
 
 COPY --from=shyim/supervisord:latest --link /usr/local/bin/supervisord /usr/bin/supervisord
 
