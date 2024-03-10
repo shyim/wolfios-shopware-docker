@@ -3,7 +3,7 @@ FROM cgr.dev/chainguard/wolfi-base
 ARG PHP_VERSION=8.3
 
 RUN apk add --no-cache \
-    busybox-full \
+    netcat-openbsd \
     jq \
     trurl \
     php-${PHP_VERSION} \
